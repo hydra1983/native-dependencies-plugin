@@ -19,13 +19,13 @@ buildscript {
     }
   }
   dependencies {
-    classpath "gradle.plugin.com.github.linsea:native-dependencies-plugin:0.2.1"
+    classpath "gradle.plugin.com.github.hydra1983:native-dependencies-plugin:1.0.0"
   }
 }
 
 //Apply the plugin in the build.gradle of *APP* module, this is encouraged, or you may encounter this bug:
 //https://code.google.com/p/android/issues/detail?id=158630
-apply plugin: "com.github.linsea.native-dependencies"
+apply plugin: "com.github.hydra1983.native-dependencies"
 ```
 
 **2. declare Native libraries dependencies**  
@@ -167,13 +167,13 @@ buildscript {
     }
   }
   dependencies {
-    classpath "gradle.plugin.com.github.linsea:native-dependencies-plugin:0.2.1"
+    classpath "gradle.plugin.com.github.hydra1983:native-dependencies-plugin:0.2.1"
   }
 }
 
 //在*主模块*项目中(比如APP项目中)应用插件,
 //否则可能遇到Android官方插件中的这个BUG:https://code.google.com/p/android/issues/detail?id=158630
-apply plugin: "com.github.linsea.native-dependencies"
+apply plugin: "com.github.hydra1983.native-dependencies"
 ```
 
 **2. 声明Native依赖库**  

@@ -14,7 +14,7 @@
 * limitations under the License.
 */
 
-package com.github.linsea.android
+package com.github.hydra1983.android
 
 import org.gradle.api.DefaultTask
 import org.gradle.api.logging.Logger

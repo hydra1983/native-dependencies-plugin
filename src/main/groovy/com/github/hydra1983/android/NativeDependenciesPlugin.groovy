@@ -14,7 +14,7 @@
 * limitations under the License.
 */
 
-package com.github.linsea.android
+package com.github.hydra1983.android
 
 import org.gradle.api.Plugin
 import org.gradle.api.Project
@@ -38,9 +38,14 @@ class NativeDependenciesPlugin implements Plugin<Project> {
         project.afterEvaluate { evaluateResult ->
             if (evaluateResult.state.getFailure() == null) {
                 Task task = project.task("collectso", type: NativeSoFilesCollectorTask)
-                task.dependencies = project.configurations.compile.files.findAll {
+                def dependencies = []
+                dependencies.addAll(project.configurations.compile.files.findAll {
                     it.path.endsWith(".so")
-                }
+                })
+                dependencies.addAll(project.configurations.implementation.files.findAll {
+                    it.path.endsWith(".so")
+                })
+                task.dependencies = dependencies
                 project.tasks.findByName('preBuild').dependsOn task
             }
         }
@@ -48,6 +53,6 @@ class NativeDependenciesPlugin implements Plugin<Project> {
 
     static def hasAndroidPlugin(Project project) {
         return (project.pluginManager.hasPlugin("com.android.application")
-                || project.pluginManager.hasPlugin("com.android.library"))
+            || project.pluginManager.hasPlugin("com.android.library"))
     }
 }

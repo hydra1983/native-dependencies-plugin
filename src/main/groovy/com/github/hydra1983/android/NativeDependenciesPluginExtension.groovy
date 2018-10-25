@@ -14,7 +14,7 @@
 * limitations under the License.
 */
 
-package com.github.linsea.android
+package com.github.hydra1983.android
 
 class NativeDependenciesPluginExtension {
 

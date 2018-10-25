@@ -5,6 +5,7 @@
 /**/*/build
 
 .idea/
+/out
 
 # built application files
 *.apk
