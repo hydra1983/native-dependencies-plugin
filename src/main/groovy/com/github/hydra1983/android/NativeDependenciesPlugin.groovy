@@ -42,7 +42,9 @@ class NativeDependenciesPlugin implements Plugin<Project> {
                 dependencies.addAll(project.configurations.compile.files.findAll {
                     it.path.endsWith(".so")
                 })
-                dependencies.addAll(project.configurations.implementation.files.findAll {
+                // https://qiita.com/MirrgieRiana/items/d3271f6979c1451207a6
+                // http://bbs.bugcode.cn/t/95606
+                dependencies.addAll(project.configurations.releaseCompileClasspath.files.findAll {
                     it.path.endsWith(".so")
                 })
                 task.dependencies = dependencies

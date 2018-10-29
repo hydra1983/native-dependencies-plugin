@@ -26,7 +26,7 @@ dependencies {
 
 
 group 'com.github.hydra1983'
-version '1.0.0'
+version '1.0.6'
 
 pluginBundle {
     website = 'https://github.com/hydra1983/native-dependencies-plugin'
